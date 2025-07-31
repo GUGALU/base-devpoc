@@ -13,7 +13,7 @@ The main goal of this project is to provide a clean, modular, and extensible fou
 
 ## 🧱 Tech Stack
 
-- Java 17+
+- Java 21
 - Spring Boot (Web, Data JPA, Security)
 - PostgreSQL
 - Docker / Docker Compose
@@ -26,7 +26,7 @@ The main goal of this project is to provide a clean, modular, and extensible fou
 
 ### Prerequisites
 
-- Java 17+
+- Java 21
 - Docker & Docker Compose
 - Git
 
