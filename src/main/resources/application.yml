@@ -3,7 +3,7 @@ spring:
     name: devpoc
 
   datasource:
-    url: jdbc:postgresql://db:5432/devdb
+    url: jdbc:postgresql://localhost:5432/devdb
     username: devuser
     password: devpass
     driver-class-name: org.postgresql.Driver
@@ -27,6 +27,11 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        use_sql_comments: true
+        order_updates: true
+        order_inserts: true
+        jdbc:
+          batch_size: 50
     show-sql: true
     open-in-view: true
 
