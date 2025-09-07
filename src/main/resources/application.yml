@@ -35,6 +35,27 @@ spring:
     show-sql: true
     open-in-view: true
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: myuser
+    password: secret
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: myGroup
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    topic:
+      name: marketing-topic
+
 server:
   error:
     whitelabel:
@@ -43,3 +64,11 @@ server:
   servlet:
     contextPath: /api
   forward-headers-strategy: framework
+
+rabbitmq:
+  queue:
+    name: marketing-queue
+  exchange:
+    name: marketing-exchange
+  routing:
+    key: marketing-routing-key
